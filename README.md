@@ -52,22 +52,6 @@ npm run build
 🌐 Deployment
 This project is deployed using Vercel.
 
-
-📁 Folder Structure
-
-inlighn-redesign/
-├── public/
-├── src/
-│   ├── assets/
-│   ├── components/
-│   ├── pages/
-│   ├── App.jsx
-│   └── main.jsx
-├── .gitignore
-├── index.html
-├── package.json
-├── tailwind.config.js
-└── vite.config.js
 🙋‍♀️ Author
 Shreya Shetty
 
