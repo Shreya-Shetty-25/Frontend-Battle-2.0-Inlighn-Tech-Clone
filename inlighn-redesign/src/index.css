@@ -1,0 +1,170 @@
+/* @import "./components/floatingStyle.css"; */
+@import url('https://fonts.googleapis.com/css?family=Montserrat:200,300,400,600');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-dark: #0f172a;
+  --accent-primary: #3b82f6;
+  --accent-secondary: #00f6ff;
+  --text-light: #f8fafc;
+  --text-secondary: #94a3b8;
+}
+
+/* Cursor styles remain unchanged */
+.cursor-dot,
+.cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  z-index: 9999;
+}
+
+.cursor-dot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--accent-secondary);
+}
+
+.cursor-ring {
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--accent-secondary);
+  background-color: transparent;
+  transition: width 0.2s ease, height 0.2s ease, opacity 0.3s ease;
+}
+
+/* Gradient animation remains unchanged */
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.bg-gradient-tech {
+  background: linear-gradient(
+    -45deg,
+    #0f172a,
+    #1e3a8a,
+    #0369a1,
+    #0d1b2a,
+    #0f172a
+  );
+  background-size: 400% 400%;
+  animation: gradient 14s ease infinite;
+}
+
+/* DOUBLED CIRCLE SIZE IN FLOATING SHAPES */
+.floating-shapes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5076px;
+  background-size: 200%; /* Double the background size */
+  animation: infiniteScroll 60s linear infinite; /* Faster scroll to compensate for larger shapes */
+  background-repeat: repeat-x;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cpath fill='%233b82f6' fill-opacity='0.15' d='M60,20 Q100,10 140,20 T180,60 Q190,100 180,140 T140,180 Q100,190 60,180 T20,140 Q10,100 20,60 T60,20Z'/%3E%3Cpath fill='%2300f6ff' fill-opacity='0.1' d='M40,40 Q100,30 160,40 T160,160 Q100,170 40,160 T40,40Z'/%3E%3C/svg%3E");
+  z-index: 0;
+  opacity: 0.3;
+  filter: brightness(1.2);
+  pointer-events: none;
+  mix-blend-mode: screen;
+}
+
+.floating-shapes::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(0, 246, 255, 0.1) 100%);
+  mix-blend-mode: overlay;
+  pointer-events: none;
+}
+
+/* Adjusted animation for larger shapes */
+@keyframes infiniteScroll {
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(0, -2538px, 0); } /* Adjusted for larger pattern */
+}
+
+/* Rest of your styles remain unchanged */
+@keyframes driftUp {
+  0% { transform: translateY(0); opacity: 0.2; }
+  50% { opacity: 0.5; }
+  100% { transform: translateY(-110vh); opacity: 0; }
+}
+
+.animate-driftUp {
+  animation: driftUp 8s ease-in-out infinite;
+}
+
+.backdrop-tech {
+  background: rgba(15, 23, 42, 0.7);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+.glowing-disk {
+  opacity: 0.6;
+  filter: blur(3px) brightness(1.3);
+  mix-blend-mode: screen;
+  border-radius: 50%;
+}
+
+.glowing-disk.blue {
+  background: radial-gradient(circle, #3b82f6 0%, transparent 70%);
+  box-shadow: 0 0 10px #3b82f6, 0 0 25px rgba(59, 130, 246, 0.5);
+}
+
+.glowing-disk.violet {
+  background: radial-gradient(circle, #7c3aed 0%, transparent 70%);
+  box-shadow: 0 0 10px #7c3aed, 0 0 25px rgba(124, 58, 237, 0.5);
+}
+
+.glowing-disk.cyan {
+  background: radial-gradient(circle, #00f6ff 0%, transparent 70%);
+  box-shadow: 0 0 12px #00f6ff, 0 0 30px rgba(0, 246, 255, 0.6);
+}
+
+.glowing-disk.sky {
+  background: radial-gradient(circle, #38bdf8 0%, transparent 70%);
+  box-shadow: 0 0 10px #38bdf8, 0 0 25px rgba(56, 189, 248, 0.5);
+}
+
+.glowing-disk.white {
+  background: radial-gradient(circle, #f3f4f6 0%, transparent 70%);
+  box-shadow: 0 0 8px #f3f4f6, 0 0 20px rgba(243, 244, 246, 0.4);
+}
+
+@supports not (backdrop-filter: blur(10px)) {
+  .backdrop-tech {
+    background: rgba(15, 23, 42, 0.9);
+  }
+}
+/* optional but helps */
+.group:hover .group-hover\:bg-right {
+  background-position: right;
+}
+@keyframes slideBg {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: 100% center;
+  }
+}
+/* global.css */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+
