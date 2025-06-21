@@ -2,13 +2,14 @@
   "name": "inlighn-redesign",
   "version": "0.0.1",
   "private": true,
-   "type": "module", 
+  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview"
   },
   "dependencies": {
+    "@lottiefiles/react-lottie-player": "^3.6.0",
     "aos": "^2.3.4",
     "framer-motion": "^12.18.1",
     "lottie-react": "^2.4.1",
