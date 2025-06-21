@@ -7,7 +7,7 @@ import About from "./pages/About";
 import Programs from "./pages/Programs";
 import Contact from "./pages/Contact";
 import Verify from "./pages/Verify";
-
+import "./index.css"
 export default function App() {
   return (
     <Routes>

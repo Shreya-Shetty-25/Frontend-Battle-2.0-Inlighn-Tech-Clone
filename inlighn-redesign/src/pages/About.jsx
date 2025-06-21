@@ -10,6 +10,7 @@ import Drop from '../components/Drop';
 import TestimonalCarousel from '../components/TestimonalCarousel';
 import Form from '../components/Form';
 import Footer from '../components/Footer';
+
 const About = () => {
   useEffect(() => {
       AOS.init({
@@ -29,6 +30,7 @@ const About = () => {
            <TestimonalCarousel />
            <Form />
            <Footer />
+           
         </>
   );
 };
